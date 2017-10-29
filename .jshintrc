@@ -1,0 +1,56 @@
+{
+  "esversion": 6,
+  "node": true,
+
+  // Tolerate the use `[]` notation when dot notation would be possible.
+  // (this is sometimes preferable for readability)
+  "sub": true,
+
+  // Do NOT suppress warnings about mixed tabs and spaces
+  // (two spaces always, please; see `.editorconfig`)
+  "smarttabs": false,
+
+  // Suppress warnings about the use of expressions where fn calls or assignments
+  // are expected, and about using assignments where conditionals are expected.
+  // (while generally a good idea, without this setting, JSHint needlessly lights up warnings
+  //  in existing, working code that really shouldn't be tampered with.  Pandora's box and all.)
+  "expr": true,
+  "boss": true,
+
+  // Do NOT suppress warnings about using functions inside loops
+  // (in the general case, we should be using iteratee functions with `_.each()`
+  //  or `Array.prototype.forEach()` instead of `for` or `while` statements
+  //  anyway.  This warning serves as a helpful reminder.)
+  "loopfunc": false,
+
+  // Do NOT allow backwards, node-dependency-style commas.
+  // (while this code style choice was used by the project in the past,
+  //  we have since standardized these practices to make code easier to
+  //  read, albeit a bit less exciting)
+  "laxcomma": false,
+
+  // Strictly enforce the consistent use of single quotes.
+  // (this is a convention that was established primarily to make it easier
+  //  to grep [or FIND+REPLACE in Sublime] particular string literals in
+  //  JavaScript [.js] files.  Note that JSON [.json] files are, of course,
+  //  still written exclusively using double quotes around key names and
+  //  around string literals.)
+  "quotmark": "single",
+
+  // Do NOT suppress warnings about the use of `==null` comparisons.
+  // (please be explicit-- use Lodash or `require('util')` and call
+  //  either `.isNull()` or `.isUndefined()`)
+  "eqnull": false,
+
+  // Strictly enforce the use of curly braces with `if`, `else`, and `switch`
+  // as well as, much less commonly, `for` and `while` statements.
+  // (this is just so that all of our code is consistent, and to avoid bugs)
+  "curly": false,
+
+  // Strictly enforce the use of `===` and `!==`.
+  // (this is always a good idea.  Check out "Truth, Equality, and JavaScript"
+  //  by Angus Croll [the author of "If Hemmingway Wrote JavaScript"] for more
+  //  explanation as to why.)
+  "eqeqeq": true
+
+}
