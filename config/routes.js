@@ -30,6 +30,9 @@ module.exports = function(app){
 
   app.get('/resetgym', gym.reset);
 
+  app.get('/fight', gym.dukeitout);
+
+
   //trainer
   app.get('/trainers', trainer.go);
 

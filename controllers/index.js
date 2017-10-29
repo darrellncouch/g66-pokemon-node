@@ -18,8 +18,7 @@ module.exports = {
       };
       (req.session.p1);
       (req.session.p2);
-      console.log('p1 is: ' + req.session.p1.name);
-      console.log('p2 is: ' + req.session.p2.name);
+
       res.render('pokemon', {pokelist : result, p1: req.session.p1, p2: req.session.p2})
     })
   },
@@ -43,7 +42,7 @@ module.exports = {
     .where('id', req.params.id)
     .del()
     .then((result)=>{
-      res.redirect('/pokemon')
+      res.redirect('/pokemon/#one')
     })
   },
 

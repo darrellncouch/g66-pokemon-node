@@ -4,13 +4,12 @@ const knex = require('../db/knex');
 module.exports = {
 
   go: (req, res)=>{
+    var winner = {name: ''};
     knex('pokemon')
     .where('in_gym', false)
     .then((pokemon)=>{
-       res.render('gym', {p1: req.session.p1, p2: req.session.p2, pokelist: pokemon} )
+       res.render('gym', {p1: req.session.p1, p2: req.session.p2, pokelist: pokemon, winner: winner} )
     })
-    console.log(req.session.p1);
-    console.log(req.session.p2);
    },
 
   getswole: (req, res)=>{
@@ -118,5 +117,28 @@ module.exports = {
     .then((result)=>{
       res.redirect('/gym/#one')
     })
+  },
+
+  dukeitout: (req, res)=>{
+
+    if(req.session.p1.cp > req.session.p2.cp){
+     var  winner = req.session.p1;
+      knex('pokemon')
+      .where('id', req.session.p1.id)
+      .increment('cp',  20)
+      .then((result)=>{
+        console.log('and the winner is: ' + winner.name);
+        res.render('gym', {p1: req.session.p1, p2: req.session.p2, winner: winner} )
+      })
+    }else{
+      var winner = req.session.p2;
+      knex('pokemon')
+      .where('id', req.session.p2.id)
+      .increment('cp', 20)
+      .then((result)=>{
+        console.log('and the winner is: ' + winner.name);
+        res.render('gym', {p1: req.session.p1, p2: req.session.p2, winner: winner} )
+      })
+    }
   },
 }
