@@ -94,7 +94,11 @@
 								<% if( p1.name == 'temp' || p2.name == 'temp'){%>
 										<input type="submit" class="fgtBtnMargLeft" value="Add to gym">
 									<%}else{%>
+										<% if(winner.name == ""){%>
 										<input type="submit" class="fgtBtnMargLeft" value="FIGHT!">
+										<%}else{%>
+											<input type="submit" class="fgtBtnMargLeft" value="FIGHT!" disabled>
+										<%}%>
 									<%}%>
 								</form>
 							</div>
