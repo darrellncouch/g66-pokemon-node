@@ -11,6 +11,7 @@ exports.up = function(knex, Promise) {
       .index();
     table.integer('cp')
     table.boolean('in_gym')
+    table.string('img_link')
   })
 };
 

@@ -30,7 +30,8 @@ module.exports = {
       name: req.body.name,
       cp: req.body.cp,
       trainer_id: req.body.trainer_id,
-      in_gym: false
+      in_gym: false,
+      img_link: req.body.img_link
     })
     .then((result)=>{
       res.redirect('/pokemon')
