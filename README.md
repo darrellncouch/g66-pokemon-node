@@ -1,4 +1,14 @@
-![](https://github.com/gSchool/pokemon-node/blob/master/public/images/pokemon-logo.png)
+#Pokemon node
+
+### Technologies used:
+* HTML
+* CSS
+* Javascript
+* Node/express
+* postgreSQL
+* Sessions/Cookies
+* Jquery
+* Bootstrap
 
 ### Important note before starting:
 The styling in the views index file needs to be copy pasted to the other files you make throughout the project to keep it consistent. If you want to do it with ejs layouts that's also a option.
