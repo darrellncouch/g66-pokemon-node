@@ -10,6 +10,9 @@
 * Jquery
 * Bootstrap
 
+![alt text](./poke1.jpeg)
+![alt text](./poke2.jpeg)
+
 ### Important note before starting:
 The styling in the views index file needs to be copy pasted to the other files you make throughout the project to keep it consistent. If you want to do it with ejs layouts that's also a option.
 
